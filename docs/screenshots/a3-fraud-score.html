@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>A3 Fraud Score — smoke test</title>
+  <style>
+    body { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background: #0f172a; color: #e2e8f0; padding: 2rem; }
+    h1 { font-size: 1.1rem; color: #38bdf8; }
+    pre { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 1rem; white-space: pre-wrap; }
+    .meta { color: #94a3b8; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>A3 Fraud Score pipeline — smoke test</h1>
+  <p class="meta">Captured: 2026-06-21 11:55:54 UTC</p>
+  <pre>$ curl -s -X POST http://127.0.0.1:18001/events \
+  -H "Content-Type: application/json" \
+  -d '{"account_id":"u1","value":8000,"channel":"wire"}'
+{"account_id":"u1","value":8000.0,"channel":"wire","ts":"2026-06-21T11:55:54.414299Z","event_id":"ev-3","state":"pending"}
+
+$ echo '...event json...' | fraud-scorer
+{"event_id":"ev-3","score":0.8,"band":"high","flags":["high_value","risky_channel_wire"]}
+
+$ curl -s -X PATCH http://127.0.0.1:18001/events/ev-3/score \
+  -H "Content-Type: application/json" -d '...score payload...'
+{"account_id":"u1","value":8000.0,"channel":"wire","ts":"2026-06-21T11:55:54.414299Z","event_id":"ev-3","state":"scored"}</pre>
+</body>
+</html>

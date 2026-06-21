@@ -1,0 +1,11 @@
+# verify-all.sh summary
+Captured: 2026-06-21 11:55:54 UTC
+
+==> D1 terraform
+[33mBLOCKED D1 terraform (terraform not installed — config-only dry-run)[0m
+==> D2 docker compose stack
+[33mBLOCKED D2 docker compose stack (docker not installed — config-only dry-run)[0m
+==> D4 k8s manifests
+[33mBLOCKED D4 k8s manifests (kubectl not installed — config-only dry-run)[0m
+
+Summary: pass=10 fail=0 skip=0 blocked=4

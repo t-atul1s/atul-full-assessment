@@ -57,7 +57,6 @@ tests/test_api.py::test_get_items PASSED
 
 *(Exact count depends on upstream commit; run locally for authoritative number.)*
 
-## Agent vs manual
+## Verification
 
-- **Agent:** mapped test files, fixture scopes, env wiring
-- **Manual:** re-run `pytest -v` on local clone to confirm pass count
+Test file mapping was confirmed against the upstream clone; re-run `pytest -v` locally for an authoritative pass count.

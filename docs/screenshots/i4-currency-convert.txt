@@ -1,0 +1,8 @@
+# I4 Currency Convert smoke test
+Captured: 2026-06-21 11:55:09 UTC
+
+$ curl -s -X POST http://127.0.0.1:18000/convert -H "Content-Type: application/json" -d '{"amount":100,"source":"USD","target":"INR"}'
+{"amount":100.0,"source":"USD","target":"INR","rate":84.5,"result":8450.0}
+
+$ curl -s http://127.0.0.1:18000/health
+{"ok":true,"currencies":["EUR","GBP","INR","USD"]}

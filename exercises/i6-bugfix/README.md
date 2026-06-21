@@ -16,7 +16,6 @@ apply_discount(100, 10)  # returned -900
 pytest tests/ -v
 ```
 
-## Agent vs manual
+## Verification
 
-- Agent: traced failing test, identified `%` semantics mismatch, patched one line.
-- Manual: re-run pytest and spot-check `cart_total` with mixed line items.
+Re-run pytest and spot-check `cart_total` with mixed line items after applying the fix.

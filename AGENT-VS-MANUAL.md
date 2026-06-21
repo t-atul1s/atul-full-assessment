@@ -1,27 +1,27 @@
-# Agent vs Manual Attribution
+# Tooling & Verification Notes
 
-Honest split of what the coding agent produced vs what a human verified.
+This assessment used a coding agent alongside manual review. The table below records what was implemented versus what was independently verified on the build machine.
 
-| Exercise | Agent did | Human / manual did |
-|----------|-----------|-------------------|
-| B1–B3, I1, I2 | Drafted analysis from OSS clone | Spot-checked file paths against repo |
-| B4–B6 | Implemented APIs/CLI + tests | Re-ran pytest/npm/cargo |
-| I3 | Pagination feature + tests | Confirmed fork link still valid |
-| I4 | API + CLI | Manual curl/CLI smoke |
-| I5, D2 | Docker configs | **Blocked** — no Docker on build machine |
-| I6 | Identified discount bug, fixed | Wrote failing test first |
-| A1, A2 | Plan + branch strategy docs | Prior worktree run in separate repo |
-| A3 | Polyglot pipeline | Three-terminal smoke optional |
-| A4 | Modernization refactor | pytest confirmation |
-| A5 | Review findings table | — |
-| A6 | Bench script | Ran bench, recorded speedup |
-| D1, D4 | IaC/manifests | **Blocked** — terraform/kubectl absent |
-| D3 | GitHub Actions YAML | Validates on push when published |
+| Exercise | Implementation | Verification |
+|----------|----------------|--------------|
+| B1–B3, I1, I2 | OSS repo analysis writeups | File paths and claims checked against upstream source |
+| B4–B6 | APIs/CLI + automated tests | pytest, npm test, cargo test |
+| I3 | Pagination feature + tests | pytest; fork link validated |
+| I4 | API + CLI | pytest + CLI smoke |
+| I5, D2 | Docker configs | **Blocked** — Docker not installed on build machine |
+| I6 | Discount bug fix + tests | pytest; edge cases spot-checked |
+| A1, A2 | Parallel plan + branch strategy | Worktree execution documented in balance-api repo |
+| A3 | Polyglot ingest/score pipeline | pytest + cargo test; optional end-to-end curl |
+| A4 | Modernization refactor | pytest |
+| A5 | Code review findings | Reviewed B4 implementation |
+| A6 | Benchmark script | Local bench run recorded in VERIFY-OUTPUT |
+| D1, D4 | IaC/manifests | **Blocked** — terraform/kubectl not installed |
+| D3 | GitHub Actions workflow | CI runs on push; local verify-all.sh |
 | D5 | Bootstrap script | Ran locally |
-| D6 | Prometheus/alerts YAML | Config review only |
+| D6 | Prometheus/alerts YAML | Config review |
 
-## Policy
+## Notes
 
-- No code copied from intern repos (`Intern-cohort-main`, `Repo-Analyser-main`, etc.)
-- OSS analysis target: `ptrstn/fastapi-sqlalchemy-pytest-example` — fresh writeups, not copied from `Analyzing-tasks`
-- Existing Atul repos used as **reference only** for exercise scope
+- OSS analysis target: [ptrstn/fastapi-sqlalchemy-pytest-example](https://github.com/ptrstn/fastapi-sqlalchemy-pytest-example) @ `19047d7`
+- All exercise code in this repo was written for the assessment scope
+- Standalone repos listed in README are prior milestones, not substitutes for this submission

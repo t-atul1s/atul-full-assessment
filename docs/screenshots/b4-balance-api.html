@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>B4 Balance API — smoke test</title>
+  <style>
+    body { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background: #0f172a; color: #e2e8f0; padding: 2rem; }
+    h1 { font-size: 1.1rem; color: #38bdf8; }
+    pre { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 1rem; white-space: pre-wrap; }
+    .meta { color: #94a3b8; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>B4 Balance API — smoke test</h1>
+  <p class="meta">Captured: 2026-06-21 11:55:09 UTC</p>
+  <pre>$ curl -s -X POST http://127.0.0.1:18080/transactions \
+  -H "Content-Type: application/json" \
+  -d '{"kind":"credit","amount":500}'
+{"kind":"credit","amount":500.0,"note":null,"id":1,"at":"2026-06-21T11:55:13.923161Z"}
+
+$ curl -s http://127.0.0.1:18080/balance
+{"balance":500.0}
+
+$ curl -s -X POST http://127.0.0.1:18080/transactions \
+  -H "Content-Type: application/json" \
+  -d '{"kind":"debit","amount":120}'
+{"kind":"debit","amount":120.0,"note":null,"id":2,"at":"2026-06-21T11:55:13.963276Z"}
+
+$ curl -s http://127.0.0.1:18080/balance
+{"balance":380.0}</pre>
+</body>
+</html>

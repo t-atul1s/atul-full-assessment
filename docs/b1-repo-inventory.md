@@ -64,6 +64,6 @@ pytest
 uvicorn mypackage.main:app --reload
 ```
 
-## Agent notes
+## Method
 
-Inventory derived from directory listing + `pyproject.toml` + router imports. No application code was modified for B1.
+Inventory derived from directory listing, `pyproject.toml`, and router imports. No application code was modified for B1.

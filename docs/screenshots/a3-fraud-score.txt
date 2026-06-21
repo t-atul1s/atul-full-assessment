@@ -1,0 +1,13 @@
+# A3 Fraud Score pipeline smoke test
+Captured: 2026-06-21 11:55:54 UTC
+
+$ curl -s -X POST http://127.0.0.1:18001/events -H "Content-Type: application/json" -d '{"account_id":"u1","value":8000,"channel":"wire"}'
+{"account_id":"u1","value":8000.0,"channel":"wire","ts":"2026-06-21T11:55:54.414299Z","event_id":"ev-3","state":"pending"}
+
+
+$ echo '...event json...' | fraud-scorer
+{"event_id":"ev-3","score":0.8,"band":"high","flags":["high_value","risky_channel_wire"]}
+
+
+$ curl -s -X PATCH http://127.0.0.1:18001/events/ev-3/score -H "Content-Type: application/json" -d '...score payload...'
+{"account_id":"u1","value":8000.0,"channel":"wire","ts":"2026-06-21T11:55:54.414299Z","event_id":"ev-3","state":"scored"}

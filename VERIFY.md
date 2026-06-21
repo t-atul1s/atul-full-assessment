@@ -27,4 +27,6 @@ make verify
 
 ## Last run output
 
-See `VERIFY-OUTPUT.md` (generated after local verify-all run).
+See [VERIFY-OUTPUT.md](../VERIFY-OUTPUT.md) (generated after local verify-all run).
+
+API smoke-test captures: [docs/screenshots/](screenshots/)

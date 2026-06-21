@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>I4 Currency Convert — smoke test</title>
+  <style>
+    body { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background: #0f172a; color: #e2e8f0; padding: 2rem; }
+    h1 { font-size: 1.1rem; color: #38bdf8; }
+    pre { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 1rem; white-space: pre-wrap; }
+    .meta { color: #94a3b8; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>I4 Currency Convert — smoke test</h1>
+  <p class="meta">Captured: 2026-06-21 11:55:09 UTC</p>
+  <pre>$ curl -s -X POST http://127.0.0.1:18000/convert \
+  -H "Content-Type: application/json" \
+  -d '{"amount":100,"source":"USD","target":"INR"}'
+{"amount":100.0,"source":"USD","target":"INR","rate":84.5,"result":8450.0}
+
+$ curl -s http://127.0.0.1:18000/health
+{"ok":true,"currencies":["EUR","GBP","INR","USD"]}</pre>
+</body>
+</html>

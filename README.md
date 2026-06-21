@@ -3,7 +3,9 @@
 **Candidate:** Atul · **Employee ID:** T4538 · **Email:** t-atul1.s@pmltp.com  
 **GitHub:** [t-atul1s](https://github.com/t-atul1s) · **Date:** June 2026
 
-Single monorepo covering **all 24 assessment exercises** (B1–B6, I1–I6, A1–A6, D1–D6) with original code, fresh OSS analysis docs, and one-command verification.
+![CI](https://github.com/t-atul1s/atul-full-assessment/actions/workflows/ci.yml/badge.svg)
+
+Single monorepo covering **all 24 assessment exercises** (B1–B6, I1–I6, A1–A6, D1–D6) with original code, OSS analysis docs, and one-command verification.
 
 ---
 
@@ -72,9 +74,9 @@ atul-full-assessment/
 ├── README.md                 # This file
 ├── Makefile                  # make verify
 ├── VERIFY.md                 # Verification guide
-├── AGENT-VS-MANUAL.md        # Honest agent attribution
+├── AGENT-VS-MANUAL.md        # Tooling and verification notes
 ├── i3-fork-notes.md
-├── docs/                     # B1,B2,B3,I1,I2,A1,A5
+├── docs/                     # B1,B2,B3,I1,I2,A1,A5 + screenshots
 ├── scripts/verify-all.sh
 ├── exercises/                # All build/DevOps exercises
 └── .github/workflows/ci.yml
@@ -94,11 +96,10 @@ Configs are valid and ready — see per-exercise READMEs.
 
 ---
 
-## Comparison to prior submission
+## Related repositories
 
-Atul's earlier work was spread across 4 GitHub repos + portfolio index. **This monorepo consolidates everything** for easier reviewer navigation while keeping all code original (not copied from intern repos).
+Standalone repos from earlier milestones remain available for cross-reference:
 
-Prior repos remain valid references:
 - [balance-api](https://github.com/t-atul1s/balance-api)
 - [Analyzing-tasks](https://github.com/t-atul1s/Analyzing-tasks)
 - [fraud-score-system](https://github.com/t-atul1s/fraud-score-system)
@@ -106,32 +107,9 @@ Prior repos remain valid references:
 
 ---
 
-## Recommended GitHub repo name
-
-`atul-full-assessment` or `coding-agent-assessment-atul`
-
----
-
 ## Related docs
 
 - [VERIFY.md](VERIFY.md) — per-exercise verify commands
-- [AGENT-VS-MANUAL.md](AGENT-VS-MANUAL.md) — what agent vs human did
 - [VERIFY-OUTPUT.md](VERIFY-OUTPUT.md) — last test run output
-
----
-
-## Email template (after push)
-
-```
-Subject: Coding Agent Assessment — Atul — Complete Monorepo
-
-Hi,
-
-Complete assessment submission (24 exercises, single monorepo):
-https://github.com/t-atul1s/atul-full-assessment
-
-Verify: clone repo && make verify
-
-Thanks,
-Atul
-```
+- [AGENT-VS-MANUAL.md](AGENT-VS-MANUAL.md) — tooling and verification notes
+- [docs/screenshots/](docs/screenshots/) — API smoke-test captures

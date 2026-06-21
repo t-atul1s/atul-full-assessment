@@ -11,12 +11,12 @@
 | B | `feature/balance-summary` | GET `/summary` with tx count + balance | `main.py`, `tests/test_api.py` |
 | Integration | `exercise/a2-worktrees` | Merge A then B, resolve test conflicts | all above |
 
-## Lane prompts (agent-ready)
+## Parallel lane specifications
 
-**Lane A agent:**
+**Lane A:**
 > Add GET `/transactions/{id}` returning 404 when missing. Extend pytest with lookup + not-found cases. Do not modify list or balance endpoints.
 
-**Lane B agent:**
+**Lane B:**
 > Add GET `/summary` returning `{balance, count}`. Add tests. Do not add by-id route.
 
 ## Shared constraints

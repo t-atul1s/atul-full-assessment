@@ -3,7 +3,7 @@
 [notice] A new release of pip is available: 25.3 -> 26.1.2
 [notice] To update, run: pip install --upgrade pip
 .....                                                                    [100%]
-5 passed in 0.14s
+5 passed in 0.15s
 [32mPASS B4 balance API[0m
 ==> B5 node balance API
 
@@ -15,25 +15,25 @@ TAP version 13
     # Subtest: credits increase balance
     ok 1 - credits increase balance
       ---
-      duration_ms: 8.838333
+      duration_ms: 8.657417
       type: 'test'
       ...
     # Subtest: rejects overdraft
     ok 2 - rejects overdraft
       ---
-      duration_ms: 2.283583
+      duration_ms: 2.923292
       type: 'test'
       ...
     # Subtest: lists newest transactions first
     ok 3 - lists newest transactions first
       ---
-      duration_ms: 2.711833
+      duration_ms: 2.637458
       type: 'test'
       ...
     1..3
 ok 1 - B5 node balance API
   ---
-  duration_ms: 14.486208
+  duration_ms: 14.89575
   type: 'suite'
   ...
 1..1
@@ -44,13 +44,13 @@ ok 1 - B5 node balance API
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 79.590542
+# duration_ms 79.855166
 [32mPASS B5 node balance API[0m
 ==> B6 rust log counter
 
 running 2 tests
 ..
-test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
 [32mPASS B6 rust log counter[0m
 ==> I4 currency API
@@ -58,28 +58,28 @@ test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 [notice] A new release of pip is available: 25.3 -> 26.1.2
 [notice] To update, run: pip install --upgrade pip
 ....                                                                     [100%]
-4 passed in 0.14s
+4 passed in 0.12s
 [32mPASS I4 currency API[0m
 ==> I6 bugfix
 
 [notice] A new release of pip is available: 25.3 -> 26.1.2
 [notice] To update, run: pip install --upgrade pip
 ....                                                                     [100%]
-4 passed in 0.02s
+4 passed in 0.01s
 [32mPASS I6 bugfix[0m
 ==> I3 mini change
 
 [notice] A new release of pip is available: 25.3 -> 26.1.2
 [notice] To update, run: pip install --upgrade pip
 ..                                                                       [100%]
-2 passed in 0.13s
+2 passed in 0.12s
 [32mPASS I3 mini change[0m
 ==> A3 fraud ingest API
 
 [notice] A new release of pip is available: 25.3 -> 26.1.2
 [notice] To update, run: pip install --upgrade pip
 .                                                                        [100%]
-1 passed in 0.12s
+1 passed in 0.11s
 [32mPASS A3 fraud ingest API[0m
 ==> A3 fraud scorer
 warning: type `Event` is more private than the item `score_event`
@@ -126,12 +126,15 @@ test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 
 [32mPASS A3 fraud scorer[0m
 ==> A4 modernization
+
+[notice] A new release of pip is available: 25.3 -> 26.1.2
+[notice] To update, run: pip install --upgrade pip
 ..                                                                       [100%]
-2 passed in 0.03s
+2 passed in 0.01s
 [32mPASS A4 modernization[0m
 ==> A6 perf bench
 n=200000
-naive=0.008462s fast=0.000001s speedup=7692.4x
+naive=0.008672s fast=0.000001s speedup=11312.3x
 [32mPASS A6 perf bench[0m
 ==> I5 dockerized API
 [33mBLOCKED I5 dockerized API (docker not installed — config-only dry-run)[0m

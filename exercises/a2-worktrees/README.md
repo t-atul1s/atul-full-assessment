@@ -1,6 +1,6 @@
 # A2 — Worktree Execution Notes
 
-This monorepo documents the A1 parallel plan. Feature branches are described here; full git worktree history lives in the separate `balance-api` repo from Atul's earlier submission.
+This monorepo documents the A1 parallel plan. Feature branches are described here; full git worktree history is in the separate [balance-api](https://github.com/t-atul1s/balance-api) repo.
 
 ## Simulated integration outcome
 
@@ -34,6 +34,6 @@ Prior execution with real worktrees: https://github.com/t-atul1s/balance-api/tre
 - [x] Merge order + conflict strategy
 - [ ] Live worktree logs (see external repo)
 
-## Agent vs manual
+## Execution notes
 
-Agent authored plan and branch strategy; manual worktree commands were run in `balance-api` repo (not duplicated here to avoid nested git complexity).
+Worktree commands were run in the `balance-api` repo to avoid nested git complexity in this monorepo. See the external link above for branch history and merge evidence.

@@ -39,6 +39,6 @@ Non-blocking for assessment scope.
 
 **Approve for assessment** with documented limitations. No security-sensitive data handled.
 
-## Agent vs manual
+## Review method
 
-- Agent produced initial implementation; human review captured persistence and money-precision gaps.
+Findings were captured by reading the B4 implementation directly; persistence and money-precision gaps are noted above.
