@@ -1,0 +1,9 @@
+{
+  "name": "a3-fraud-worker",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "poll": "node worker.js"
+  }
+}

@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: balance-api
+    static_configs:
+      - targets: ["balance-api:8000"]

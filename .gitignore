@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+target/
+node_modules/
+*.egg-info/
+.DS_Store
+.env
+*.log
+.terraform/
+*.tfstate*

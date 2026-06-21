@@ -1,0 +1,30 @@
+services:
+  balance-api:
+    build:
+      context: ../
+      dockerfile: i5-dockerized-api/Dockerfile
+    ports:
+      - "8080:8000"
+    networks: [stack]
+
+  currency-api:
+    image: python:3.12-slim
+    working_dir: /app
+    volumes:
+      - ../i4-currency-convert/api:/app
+    command: sh -c "pip install -q -r requirements.txt && uvicorn main:app --host 0.0.0.0 --port 8000"
+    ports:
+      - "8081:8000"
+    networks: [stack]
+
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - "9090:9090"
+    networks: [stack]
+
+networks:
+  stack:
+    driver: bridge

@@ -1,0 +1,59 @@
+name: Assessment CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  python-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project:
+          - exercises/b4-balance-api
+          - exercises/i4-currency-convert/api
+          - exercises/i6-bugfix
+          - exercises/a3-fraud-score/api
+          - exercises/i3-mini-change
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install and test
+        working-directory: ${{ matrix.project }}
+        run: |
+          pip install -r requirements.txt
+          pytest -v
+
+  node-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: B5 tests
+        working-directory: exercises/b5-node-balance-api
+        run: npm test
+
+  rust-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: B6 tests
+        working-directory: exercises/b6-rust-log-counter
+        run: cargo test
+      - name: A3 scorer tests
+        working-directory: exercises/a3-fraud-score/scorer
+        run: cargo test
+
+  verify-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run verify-all
+        run: ./scripts/verify-all.sh

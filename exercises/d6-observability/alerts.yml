@@ -1,0 +1,10 @@
+groups:
+  - name: balance-api
+    rules:
+      - alert: BalanceApiDown
+        expr: up{job="balance-api"} == 0
+        for: 1m
+        labels:
+          severity: page
+        annotations:
+          summary: "Balance API scrape target down"
