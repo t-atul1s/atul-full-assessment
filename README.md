@@ -1,7 +1,6 @@
 # Coding Agent Assessment — Atul (Complete Monorepo)
 
-**Candidate:** Atul · **Employee ID:** T4538 · **Email:** t-atul1.s@pmltp.com  
-**GitHub:** [t-atul1s](https://github.com/t-atul1s) · **Date:** June 2026
+**Candidate:** Atul · **Employee ID:** T4538 · **Email:** t-atul1.s@pmltp.com
 
 ![CI](https://github.com/t-atul1s/atul-full-assessment/actions/workflows/ci.yml/badge.svg)
 
