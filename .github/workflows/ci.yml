@@ -10,6 +10,7 @@ jobs:
   python-tests:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         project:
           - exercises/b4-balance-api
